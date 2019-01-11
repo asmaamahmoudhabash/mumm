@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'Dashboard','middleware' => 'auth'],function(){
 
-   
+    Route::resource('categories', 'CategoryController');
 
 
 });
