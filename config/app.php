@@ -180,6 +180,8 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         // Flash
          Laracasts\Flash\FlashServiceProvider::class,
+        // laravel collective
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -230,7 +232,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'Flash' => Laracasts\Flash\Flash::class
+        'Flash' => Laracasts\Flash\Flash::class,
+         'Form' => Collective\Html\FormFacade::class,
+         'Html' => Collective\Html\HtmlFacade::class,
 
 
     ],
