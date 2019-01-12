@@ -23,9 +23,30 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+
+
+// category
 $factory->define(App\Models\Category::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->word,
     ];
+});
+
+// posts
+
+$factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->word,
+        'body' => $faker->sentence,
+        'access' => $faker->boolean,
+        'is_published' => $faker->boolean,
+        'order' => $faker->numberBetween(0,55),
+        'category_id' => $faker->numberBetween(11,38),
+        'user_id' => $faker->numberBetween(11,38),
+
+    ];
+
+
 });
