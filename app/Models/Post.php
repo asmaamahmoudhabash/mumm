@@ -11,4 +11,9 @@ class Post extends Model
     public $timestamps = true;
     protected $fillable = array('title', 'body', 'access', 'is_published', 'order', 'category_id', 'image');
 
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
+
 }
