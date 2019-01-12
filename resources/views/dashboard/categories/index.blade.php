@@ -59,7 +59,12 @@
                 </tbody>
 
             </table>
-            {{$categories->links()}}
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    {{$categories->render()}}
+                </ul>
+            </nav>
         </div>
     </div>
 

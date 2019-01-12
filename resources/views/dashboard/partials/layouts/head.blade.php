@@ -34,5 +34,9 @@
 
 
     <link rel="shortcut icon" href="{{asset('assets/dashboard/demo/default/media/img/logo/favicon.ico')}}" />
+
+     {{--bootstarp--}}
+    <link href="{{asset('assets/dashboard/boostrap/css/bootstrap.css')}}" />
+
 </head>
 <!-- end::Head -->

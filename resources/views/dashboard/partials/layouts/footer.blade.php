@@ -479,22 +479,8 @@
 <div id="m_scroll_top" class="m-scroll-top">
     <i class="la la-arrow-up"></i>
 </div>
-<!-- end::Scroll Top -->		    <!-- begin::Quick Nav -->
-<ul class="m-nav-sticky" style="margin-top: 30px;">
-    <li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Layout Builder" data-placement="left">
-        <a href="index2b54.html?page=builder&amp;demo=default"><i class="la la-cog"></i></a>
-    </li>
-    <li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Purchase" data-placement="left">
-        <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" target="_blank"><i class="la la-cart-arrow-down"></i></a>
-    </li>
-    <li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Documentation" data-placement="left">
-        <a href="https://keenthemes.com/metronic/documentation.html" target="_blank"><i class="la la-code-fork"></i></a>
-    </li>
-    <li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Support" data-placement="left">
-        <a href="https://keenthemes.com/forums/forum/support/metronic5/" target="_blank"><i class="la la-life-ring"></i></a>
-    </li>
-</ul>
-<!-- begin::Quick Nav -->
+<!-- end::Scroll Top -->
+
 <!--begin::Global Theme Bundle -->
 <script src="{{asset('assets/dashboard/vendors/base/vendors.bundle.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/dashboard/demo/default/base/scripts.bundle.js')}}" type="text/javascript"></script>
@@ -507,3 +493,7 @@
 <!--begin::Page Scripts -->
 <script src="{{asset('assets/dashboard/app/js/dashboard.js')}}" type="text/javascript"></script>
 <!--end::Page Scripts -->
+
+<!--start::bootstrap Scripts -->
+<script src="{{asset('assets/dashboard/bootstrap/js/bootstrap.js')}}" type="text/javascript"></script>
+<!--end::bootstrap Scripts -->
