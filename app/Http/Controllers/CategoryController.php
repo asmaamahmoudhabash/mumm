@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +15,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        return view('dashboard.categories.index');
+        $categories=Category::paginate(15);
+        return view('dashboard.categories.index',compact('categories'));
     }
 
     /**
@@ -22,10 +24,13 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Category $model)
     {
         //
+        return view('dashboard.categories.create', compact('model'));
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -36,6 +41,15 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'name' => 'required',
+
+        ]);
+
+
+        Category::create($request->all());
+        flash()->success('success Adding category');
+        return redirect('Dashboard/categories');
     }
 
     /**
@@ -58,6 +72,9 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
+        $model = Category::findOrFail($id);
+        return view('dashboard.categories.edit', compact('model'));
+
     }
 
     /**
@@ -70,6 +87,16 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'name' => 'required',
+
+        ]);
+
+        $categories = Category::findOrFail($id);
+        $categories->update($request->all());
+        flash()->success('success Editting category');
+        return redirect('Dashboard/categories');
+
     }
 
     /**
@@ -81,5 +108,9 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+        $category = Category::findOrFail($id);
+        $category->delete();
+        flash()->warning('success Deleting category');
+        return back();
     }
 }

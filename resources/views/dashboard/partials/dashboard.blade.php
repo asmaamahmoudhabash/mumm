@@ -27,7 +27,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
         @include('dashboard.partials.layouts.sidebar')
         <div class="m-grid__item m-grid__item--fluid m-wrapper">
-            @include('dashboard.partials.layouts.nav')
+            {{--@include('dashboard.partials.layouts.nav')--}}
             <div class="m-content">
                 @yield('content')
 
