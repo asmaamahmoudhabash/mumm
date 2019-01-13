@@ -40,7 +40,6 @@ $factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
     return [
         'title' => $faker->word,
         'body' => $faker->sentence,
-        'access' => $faker->boolean,
         'is_published' => $faker->boolean,
         'order' => $faker->numberBetween(0,55),
         'category_id' => $faker->numberBetween(11,38),

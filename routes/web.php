@@ -23,6 +23,7 @@ Route::group(['prefix' => 'Dashboard','middleware' => 'auth'],function(){
 
 
     Route::resource('categories', 'CategoryController');
+    Route::resource('posts', 'PostController');
 
 
 });
