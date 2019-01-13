@@ -19,7 +19,7 @@ Route::get('post/{id}', 'FrontController@post');
 Route::get('category/{id}', 'FrontController@category');
 
 Route::group(['prefix' => 'Dashboard','middleware' => 'auth'],function(){
-    
+
     Route::resource('categories', 'CategoryController');
     Route::resource('posts', 'PostController');
 
