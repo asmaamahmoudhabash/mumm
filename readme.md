@@ -1,4 +1,6 @@
 
+                                              mumm blog 
+is ablog system which will provide user interface to browse and explore blog posts. it contains admin dashboard to add, edit, delete, and update posts and categories. 
 Demo login info
 
 user: asmaa@asmaa.com| password: 123456
