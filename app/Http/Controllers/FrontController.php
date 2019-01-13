@@ -9,9 +9,8 @@ use App\Http\Requests;
 
 class FrontController extends Controller
 {
-    //
-    public function index(){
-
+    public function index()
+    {
         $posts = Post::where('is_published',0)->get();
         $categories = Category::all();
         return View('posts', compact('posts', 'categories'));
@@ -26,7 +25,6 @@ class FrontController extends Controller
 
     public function category($id)
     {
-
         $category = Category::findOrFail($id);
         $categories = Category::all();
         return View('categories', compact('category', 'categories'));

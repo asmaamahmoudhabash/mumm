@@ -14,7 +14,6 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
         $categories=Category::paginate(15);
         return view('dashboard.categories.index',compact('categories'));
     }
@@ -26,7 +25,6 @@ class CategoryController extends Controller
      */
     public function create(Category $model)
     {
-        //
         return view('dashboard.categories.create', compact('model'));
     }
 
@@ -40,12 +38,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $this->validate($request, [
             'name' => 'required',
 
         ]);
-
 
         Category::create($request->all());
         flash()->success('success Adding category');
@@ -71,7 +67,6 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
         $model = Category::findOrFail($id);
         return view('dashboard.categories.edit', compact('model'));
 
@@ -86,7 +81,6 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $this->validate($request, [
             'name' => 'required',
 
@@ -107,7 +101,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
         $category = Category::findOrFail($id);
         $category->delete();
         flash()->warning('success Deleting category');

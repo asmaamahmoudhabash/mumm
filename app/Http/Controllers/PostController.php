@@ -15,7 +15,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
         $posts=Post::paginate(15);
         return view('dashboard.posts.index',compact('posts'));
     }
@@ -27,7 +26,6 @@ class PostController extends Controller
      */
     public function create(Post $model)
     {
-        //
         return view('dashboard.posts.create', compact('model'));
     }
 
@@ -41,7 +39,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
@@ -49,7 +46,6 @@ class PostController extends Controller
             'category_id' => 'required',
             'is_published' => 'required',
             'image' => 'required',
-
 
         ]);
 
@@ -86,7 +82,6 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
         $model = Post::findOrFail($id);
         return view('dashboard.posts.edit', compact('model'));
 
@@ -101,14 +96,12 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
             'order' => 'required',
             'category_id' => 'required',
             'is_published' => 'required',
-
 
         ]);
         $post = Post::findOrFail($id);
@@ -134,7 +127,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
         $post = Post::findOrFail($id);
         $post->delete();
         flash()->warning('success Deleting post');
